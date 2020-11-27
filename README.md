@@ -1,6 +1,6 @@
 # pbrn-gateway
 ## Purpose 
-
+[![Build Status](https://travis-ci.com/MUHC-DP-Project/pbrn-gateway.svg?branch=main)](https://travis-ci.com/MUHC-DP-Project/pbrn-gateway)
 pbrn-gateway is the ***main*** entrypoint to the MUHC microservices suite. This service, exposed as a REST API, is an API Gateway that redirects API calls to the appropriate microservice. 
 
 This service handles getting data from other microservices, and decides what data to expose to the client.
