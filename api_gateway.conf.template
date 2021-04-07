@@ -1,0 +1,18 @@
+log_format api_main '$remote_addr - $remote_user [$time_local] "$request"'
+                    '$status $body_bytes_sent "$http_referer" "$http_user_agent"'
+                    '"$http_x_forwarded_for" "$upstream"';
+
+include upstreams.conf;
+
+server {
+    listen 0.0.0.0:${PORT};
+    server_name _;
+	proxy_set_header  Host $host;
+	proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header  X-Forwarded-Proto $scheme;
+	proxy_set_header  X-Forwarded-Port $server_port;
+	proxy_set_header  X-Forwarded-Host $host;
+  	proxy_intercept_errors on;
+  	default_type application/json;
+    include api_conf.d/*.conf;
+}
