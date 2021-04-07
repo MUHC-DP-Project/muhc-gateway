@@ -1,3 +1,4 @@
+*.conf-e
 node_modules
 dist/
 package-lock.json
