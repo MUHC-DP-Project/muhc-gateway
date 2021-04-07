@@ -9,6 +9,6 @@ COPY api_conf.d/ /etc/nginx/api_conf.d
 COPY upstreams.conf /etc/nginx/
 COPY api_gateway.conf /etc/nginx/
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
